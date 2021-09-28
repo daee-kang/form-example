@@ -3,6 +3,10 @@
     "editor.formatOnSave": true,
     "eslint.alwaysShowStatus": true,
     "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-    }
+      "source.fixAll.eslint": true
+    },
+    "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features",
+      "editor.formatOnSave": true
+     }
     }
