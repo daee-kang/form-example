@@ -1,24 +1,22 @@
-import React, { ReactElement } from 'react'
-import logo from './logo.svg'
+import React, { ReactElement, useContext } from 'react'
 import './App.css'
+import { Paper } from '@material-ui/core'
+import { FormContext } from './Context/FormContext'
+import Form from './Screens/Form'
 
-const App: React.FC = (): ReactElement => (
-    <div className="App">
-        <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-                Edit <code>src/App.tsx</code> and save to reload.
-            </p>
-            <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Learn React
-            </a>
-        </header>
-    </div>
-)
+const App: React.FC = (): ReactElement => {
+    const { currentForm } = useContext(FormContext)
+
+    return (
+        <div className="App">
+            <div className="form">
+                <div className="title">Do you have covid?</div>
+                <Paper elevation={5}>
+                    <Form form={currentForm!} />
+                </Paper>
+            </div>
+        </div>
+    )
+}
 
 export default App
